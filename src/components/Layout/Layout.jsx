@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 import styled from 'styled-components';
@@ -22,9 +22,11 @@ const Layout = () => {
           Search
         </StyledNav>
       </nav>
-      <main>
-        <Outlet />
-      </main>
+      <Suspense fallback={<div>Loading films</div>}>
+        <main>
+          <Outlet />
+        </main>
+      </Suspense>
     </>
   );
 };
