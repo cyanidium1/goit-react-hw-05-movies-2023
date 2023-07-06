@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  align-items: center;
+  background-color: #e6d5a9;
+  height: 50px;
+}
+.input {
+  margin-left: 20px;
+}

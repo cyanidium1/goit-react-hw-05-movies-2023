@@ -1,0 +1,10 @@
+.list {
+  display: flex;
+  align-items: center;
+  background-color: #e6d5a9;
+  height: 50px;
+}
+.flexbox {
+  display: flex;
+  padding: 10px;
+}
