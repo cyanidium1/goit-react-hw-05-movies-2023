@@ -15,9 +15,6 @@ const Layout = () => {
         <StyledNav className={styles.item} to="/">
           Home page
         </StyledNav>
-        <StyledNav className={styles.item} to="/movies">
-          Movies
-        </StyledNav>
         <StyledNav className={styles.item} to="/search">
           Search
         </StyledNav>

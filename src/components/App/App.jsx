@@ -8,7 +8,6 @@ import { Route, Routes } from 'react-router-dom';
 // import Search from 'pages/Search';
 import { lazy } from 'react';
 
-const Home = lazy(() => import('../../pages/Home'));
 const Movies = lazy(() => import('../../pages/Movies'));
 const Reviews = lazy(() => import('../Reviews/Reviews'));
 const Cast = lazy(() => import('../Cast/Cast'));
@@ -18,8 +17,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="movies" element={<Movies />} />
+        <Route index element={<Movies />} />
         <Route path="search" element={<Search />} />
         <Route path="movies/:movieId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast />} />
