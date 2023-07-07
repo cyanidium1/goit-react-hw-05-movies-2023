@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import styles from './Movies.module.css';
+import { useLocation } from 'react-router-dom';
+import styles from './Home.module.css';
 import Collection from 'components/Collection/Collection';
 import getter from 'utils/getter';
 
-const Movies = () => {
+const Home = () => {
   const [movielist, setMovielist] = useState([]);
-  const location = useLocation();
   useEffect(() => {
     getter('top_rated', true)
       .then(response => setMovielist(response))
       .catch(err => console.error(err));
   }, []);
 
-  return <Collection data={movielist} location={location} />;
+  return <Collection data={movielist} />;
 };
-export default Movies;
+export default Home;

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Collection.module.css';
+import { useLocation } from 'react-router-dom';
 
-const Collection = ({ data, location = [] }) => {
+const Collection = ({ data }) => {
+  const location = useLocation();
   return (
     <ul>
       {data.length === 0 ? (

@@ -20,7 +20,11 @@ const Cast = () => {
         cast.map(el => (
           <li className={styles.item} key={el.id}>
             <img
-              src={`https://image.tmdb.org/t/p/w500/${el?.profile_path}`}
+              src={
+                el.profile_path === null
+                  ? 'https://gdr.one/simg/20x20/5094bd/fff?text=img'
+                  : `https://image.tmdb.org/t/p/w500/${el.profile_path}`
+              }
               alt="pic"
               width="50"
               height="50"
