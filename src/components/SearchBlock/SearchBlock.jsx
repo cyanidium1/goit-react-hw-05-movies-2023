@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import styles from './Search.module.css';
 import Collection from 'components/Collection/Collection';
@@ -11,28 +11,23 @@ const SearchBlock = () => {
 
   const location = useLocation();
 
-  const handleInput = evt => {
-    evt.target.value === ''
-      ? setSearchParams({})
-      : setSearchParams({ search: evt.target.value });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
+  useEffect(() => {
     if (filmName !== '') {
       getter(filmName, false)
         .then(response => setResults(response))
         .catch(err => console.error(err));
     }
+  }, [filmName]);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const input = e.target.elements.search.value;
+    input === '' ? setSearchParams({}) : setSearchParams({ search: input });
   };
 
   return (
     <>
-      <Searchform
-        value={filmName}
-        handleSubmit={handleSubmit}
-        handleInput={handleInput}
-      />
+      <Searchform value={filmName} handleSubmit={handleSubmit} />
       <Collection data={results} location={location} />
     </>
   );

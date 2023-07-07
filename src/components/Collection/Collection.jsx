@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Collection.module.css';
 
-const Collection = ({ data, location }) => {
+const Collection = ({ data, location = [] }) => {
   return (
     <ul>
       {data.length === 0 ? (

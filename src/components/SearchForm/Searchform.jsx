@@ -5,10 +5,10 @@ const Searchform = props => {
   return (
     <form className={styles.form} onSubmit={props.handleSubmit}>
       <input
+        name="search"
         className={styles.input}
         type="text"
         value={props.filmName}
-        onChange={props.handleInput}
       />
       <button type="submit">Search</button>
     </form>
